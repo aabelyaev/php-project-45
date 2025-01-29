@@ -10,7 +10,8 @@
             "src/Launch.php",
             "src/Even.php",
             "src/Calc.php",
-            "src/GCD.php"
+            "src/GCD.php",
+            "src/Progression.php"
         ]
     },
     "authors": [{
