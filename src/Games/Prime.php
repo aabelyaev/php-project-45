@@ -9,7 +9,7 @@ use function cli\prompt;
 const MIN_NUM = 1;
 const MAX_NUM = 100;
 
-function play(): void
+function play()
 {
     $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $round = function () {
