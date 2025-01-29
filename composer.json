@@ -11,7 +11,9 @@
             "src/Even.php",
             "src/Calc.php",
             "src/GCD.php",
-            "src/Progression.php"
+            "src/Progression.php",
+            "src/Prime.php"
+
         ]
     },
     "authors": [{
