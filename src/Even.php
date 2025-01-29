@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\Engine\run;
+use function BrainGames\Launch\run;
 use function cli\line;
 use function cli\prompt;
 
@@ -10,7 +10,7 @@ use function cli\prompt;
 function play()
 {
     $description = 'Answer "yes" if the number is even, otherwise answer "no".';
-    $round = function () {
+    $result = function () {
         $number = rand(1, 100);
         $answer = prompt("Question: {$number}");
         line("You answer: {$answer}");
@@ -24,5 +24,5 @@ function play()
         return [$answer, $correctAnswer];
     };
 
-    run($description, $round);
+    run($description, $result);
 }

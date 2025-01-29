@@ -8,7 +8,9 @@
         "files": [
             "src/Cli.php",
             "src/Launch.php",
-            "src/Even.php"
+            "src/Even.php",
+            "src/Calc.php",
+            "src/GCD.php"
         ]
     },
     "authors": [{
