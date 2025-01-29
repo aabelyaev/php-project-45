@@ -21,7 +21,7 @@ function run(string $gameDescription, $round)
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, {$name}!");
-            return;
+            break;
         }
     }
 

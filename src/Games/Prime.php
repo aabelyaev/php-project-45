@@ -6,35 +6,36 @@ use function BrainGames\Launch\run;
 use function cli\line;
 use function cli\prompt;
 
-function play()
-{
-    $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    $result = function() {
-        $min = 1;
-        $max = 100;
+const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const MIN_RANGE = 1;
+const MAX_RANGE = 100;
 
-        $number = rand($min, $max);
-        $answer = (string)prompt('Question:' . $number);
+function play(): void
+{
+    $round = function () {
+        $number = rand(MIN_RANGE, MAX_RANGE);
+
+        $answer = prompt("Question: {$number}");
         line("You answer: {$answer}");
-        if (isPrime($number)) {
-            $correctAnswer = 'yes';
-        } else {
-            $correctAnswer = 'no';
-        }
+        $correctAnswer = isPrime($number) ? 'yes' : 'no';
+
         return [$answer, $correctAnswer];
     };
-    run($description, $result);
+
+    run(GAME_DESCRIPTION, $round);
 }
 
-function isPrime(int $number)
+function isPrime(int $number): bool
 {
     if ($number < 2) {
         return false;
     }
+
     for ($i = 2; $i <= $number / 2; $i++) {
         if ($number % $i === 0) {
             return false;
         }
     }
+
     return true;
 }
