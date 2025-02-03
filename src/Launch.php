@@ -14,14 +14,15 @@ function run(string $gameDescription, callable $round)
     line($gameDescription);
 
     $circle = 3;
-for ($i = 0; $i < $circle; $i++) {
-    [$answer, $correctAnswer] = $round();
+    for ($i = 0; $i < $circle; $i++) {
+     [$answer, $correctAnswer] = $round();
     if ($answer == $correctAnswer) {
         line('Correct!');
+        return true;
     } else {
         line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
         line("Let's try again, {$name}!");
-        break;
+        return false;
     }
 }
 }
