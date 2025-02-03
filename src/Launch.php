@@ -6,19 +6,24 @@ use function cli\line;
 use function cli\prompt;
 
 
-function run(string $gameDescription, $round) {
-    line("Welcome to the Brain Games!");
-    $name = prompt("May I have your name?");
-    line("Hello {$name}");
-    line($gameDescription);
+const ROUNDS = 3;
 
-    while (true) { 
-        [$answer, $correctAnswer] = $round();
-        if ($answer == $correctAnswer) {
-            line('Correct!');
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-            line("Let's try again, {$name}!");
+function run(string $description, callable $game)
+{
+    $playerName = prompt('May I have your name?');
+    line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
+    line($description . PHP_EOL);
+
+    for ($i = 1; $i <= ROUNDS; $i += 1) {
+        ['question' => $question, 'answer'   => $gameAnswer] = $game();
+        line('Question: %s', $question);
+        $playerAnswer = prompt('Your answer');
+
+        if ($gameAnswer !== $playerAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
+            line("Let's try again, %s!" . PHP_EOL, $playerName);
+            break;
         }
+        line('Correct!');
     }
 }
