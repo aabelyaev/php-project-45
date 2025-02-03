@@ -6,23 +6,39 @@ use function cli\line;
 use function cli\prompt;
 
 
-const ROUNDS = [];
-
-function run(string $description, callable $game)
+function run(string $gameDescription, $round)
 {
-    $playerName = prompt('May I have your name?');
-    line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
-    line($description . PHP_EOL);
+    line("Welcome to the Brain Games!");
+    $name = prompt("May I have your name?");
+    line("Hello {$name}");
+    line($gameDescription);
 
-    for ($i = 1; $i <= ROUNDS; $i += 1) {
-        ['question' => $question, 'answer'   => $gameAnswer] = $game();
-        line('Question: %s', $question);
-        $playerAnswer = prompt('Your answer');
-
-        if ($gameAnswer !== $playerAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
-            line("Let's try again, %s!" . PHP_EOL, $playerName);
+    $circle = [];
+    for ($i = 0; $i < $circle; $i++) {
+        [$answer, $correctAnswer] = $round();
+        if ($answer == $correctAnswer) {
+            line('Correct!');
+        } else {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$name}!");
         }
-        line('Correct!');
     }
+    line('Correct!');
 }
+//Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
+// function run(string $gameDescription, $round) {
+//     line("Welcome to the Brain Games!");
+//     $name = prompt("May I have your name?");
+//     line("Hello {$name}");
+//     line($gameDescription);
+
+//     while (true) { 
+//         [$answer, $correctAnswer] = $round();
+//         if ($answer == $correctAnswer) {
+//             line('Correct!');
+//         } else {
+//             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+//             line("Let's try again, {$name}!");
+//         }
+//     }
+// }
