@@ -18,12 +18,12 @@ function run(string $gameDescription, callable $round)
         [$answer, $correctAnswer] = $round();
         if ($answer == $correctAnswer) {
             line('Correct!');
-            break;
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, {$name}!");
             break;
         }
+        line('Correct!');
     }
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
