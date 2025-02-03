@@ -3,17 +3,32 @@
 
 <a href="https://codeclimate.com/github/aabelyaev/php-project-45/maintainability"><img src="https://api.codeclimate.com/v1/badges/c63ee6002724df9772b3/maintainability" /></a>
 
-### 5 step
+## project 1 - brain games
+Games:
+* Definition of an even number.
+* Calculator. Arithmetic expressions to be evaluated.
+* Determination of the greatest common factor.
+* Progression. Finds missing numbers in a sequence of numbers.
+* Definition of a prime number.
+
+### Setup
+```sh
+$ git clone https://github.com/monaray/php-project-lvl1.git
+$ make install
+
+#### make install:
+make install
+#### make brain-even:
 https://asciinema.org/connect/14c301f8-b136-48be-8bbc-8aec77914362
 
-### 6 step
+#### make brain-calc:
 https://asciinema.org/a/JBmnXxWBwncvhI3mKpCcgVzHT
 
-### 7 step
+#### make brain-gcd:
 https://asciinema.org/a/18TkhipmEqUeGrPvdgOx72BvB
 
-### 8 step
+#### make brain-progression:
  https://asciinema.org/a/fe8DgxlQAUjlTxWdpTcSDKbQH
 
-### 9 step
+#### make brain-prime:
 https://asciinema.org/a/3uVOgNinavhi1bVutJy8ezU4W
