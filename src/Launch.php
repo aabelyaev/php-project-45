@@ -21,11 +21,10 @@ function run(string $gameDescription, callable $round)
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, {$name}!");
-            break;
+            return;
         }
     }
-    line("Congratulations, %s!", $name);
-    run($gameDescription, $round);
+    line("Congratulations, {$name}!");
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
 // function run(string $gameDescription, $round) {
