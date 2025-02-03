@@ -12,9 +12,11 @@ Games:
 * Definition of a prime number.
 
 ### Setup
-$ git clone git@github.com:aabelyaev/php-project-45.git
-$ make install
-
+```sh
+git clone git@github.com:aabelyaev/php-project-45.git
+cd php-package
+make install
+```
 #### make install:
 make install
 #### make brain-even:
