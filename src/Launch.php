@@ -6,32 +6,28 @@ use function cli\line;
 use function cli\prompt;
 
 
-function run(callable $conditionsGame, string $gameDescription, $round)
+const ROUNDS = 3;
+
+function run(string $gameDescription, callable $round): void
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
-    line("Hello, %s!", $name);
+    line("Hello {$name}");
     line($gameDescription);
 
-    $countRounds = 3;
-    $colCorrect = 0;
-    for ($i = 0; $i < $countRounds; $i++) {
-        [$question, $correctAnswer] = $conditionsGame();
-        line("Question: %s", $question);
-        $answer = prompt('Your answer ');
+    for ($i = 0; $i < ROUNDS; $i++) {
+        [$answer, $correctAnswer] = $round();
 
         if ($answer == $correctAnswer) {
             line('Correct!');
-            $colCorrect++;
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
-            line("Let's try again, %s!", $name);
-            break;
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$name}!");
+            return;
         }
     }
-    if ($colCorrect === 3) {
-        line("Congratulations, %s!", $name);
-    }
+
+    line("Congratulations, {$name}!");
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
 // function run(string $gameDescription, $round) {
