@@ -24,10 +24,8 @@ function run(string $gameDescription, $round)
             break;
         }
     }
-
     line("Congratulations, {$name}!");
 }
-
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
 // function run(string $gameDescription, $round) {
 //     line("Welcome to the Brain Games!");
