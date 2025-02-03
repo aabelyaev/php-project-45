@@ -24,7 +24,6 @@ for ($i = 0; $i < $circle; $i++) {
         break;
     }
 }
-        line("Congratulations, {$name}!");
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
 // function run(string $gameDescription, $round) {
