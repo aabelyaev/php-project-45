@@ -17,8 +17,9 @@ git clone git@github.com:aabelyaev/php-project-45.git
 cd php-package
 make install
 ```
-#### make install:
-make install
+#### make brain-games:
+make brain-games
+
 #### make brain-even:
 https://asciinema.org/connect/14c301f8-b136-48be-8bbc-8aec77914362
 
