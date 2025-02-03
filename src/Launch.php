@@ -13,7 +13,7 @@ function run(string $gameDescription, $round)
     line("Hello {$name}");
     line($gameDescription);
 
-    $circle = [];
+    $circle = 3;
     for ($i = 0; $i < $circle; $i++) {
         [$answer, $correctAnswer] = $round();
         if ($answer == $correctAnswer) {
@@ -22,6 +22,7 @@ function run(string $gameDescription, $round)
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, {$name}!");
         }
+        break;
     }
 
     line("Congratulations, {$name}!");
