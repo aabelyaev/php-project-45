@@ -6,10 +6,10 @@ use function BrainGames\Launch\run;
 use function cli\line;
 use function cli\prompt;
 
-const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function play()
 {
+    $description = 'Answer "yes" if the number is even, otherwise answer "no".';
     $result = function () {
         $number = rand(1, 100);
         $answer = prompt("Question: {$number}");
@@ -24,5 +24,5 @@ function play()
         return [$answer, $correctAnswer];
     };
 
-    run(DESCRIPTION, $result);
+    run($description, $result);
 }
