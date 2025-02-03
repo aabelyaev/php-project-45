@@ -13,7 +13,7 @@ Games:
 
 ### Setup
 ```sh
-$ git clone https://github.com/monaray/php-project-lvl1.git
+$ git clone git@github.com:aabelyaev/php-project-45.git
 $ make install
 
 #### make install:
