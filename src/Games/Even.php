@@ -15,10 +15,10 @@ function play()
         line("You answer: {$answer}");
         switch ($number % 2) {
             case 0:
-            $correctAnswer = 'yes';
-            break;
+                $correctAnswer = 'yes';
+                break;
             default:
-            $correctAnswer = 'no';
+                $correctAnswer = 'no';
         }
         return [$answer, $correctAnswer];
     };
