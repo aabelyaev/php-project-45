@@ -13,8 +13,8 @@ function play()
         $x = rand(1, 20);
         $y = rand(1, 20);
 
-        $expression = "{$x} and {$y}";
-        $answer = (int)prompt("Question: What is the greatest common divisor of $expression?");
+        $expression = "{$x} {$y}";
+        $answer = (int)prompt("Question:$expression?");
         line('You answer: {$answer}');
         $correctAnswer = gcd($x, $y);
 
