@@ -25,4 +25,3 @@ function run(string $gameDescription, callable $round)
     }
     line("Congratulations, {$name}!");
 }
-

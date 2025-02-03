@@ -21,7 +21,7 @@ function play()
         return [$answer, $correctAnswer];
     };
 
-    run ($description, $result);
+    run($description, $result);
 }
 
 function gcd(int $a, int $b)
