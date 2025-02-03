@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 
 
-function run(string $gameDescription, $round)
+function run(callable $conditionsGame, string $gameDescription, $round)
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
