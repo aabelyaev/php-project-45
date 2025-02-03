@@ -10,7 +10,7 @@ function run(string $gameDescription, $round)
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
-    line("Hello {$name}");
+    line("Hello, {$name}");
     line($gameDescription);
 
     $circle = 3;
