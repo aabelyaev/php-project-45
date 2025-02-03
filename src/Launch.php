@@ -25,6 +25,7 @@ function run(string $gameDescription, callable $round)
         }
         line('Correct!');
     }
+    line("Congratulations, %s!", $name);
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
 // function run(string $gameDescription, $round) {
