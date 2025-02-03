@@ -12,7 +12,6 @@ Games:
 * Definition of a prime number.
 
 ### Setup
-```sh
 $ git clone git@github.com:aabelyaev/php-project-45.git
 $ make install
 
