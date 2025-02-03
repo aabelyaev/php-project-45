@@ -35,4 +35,4 @@ function play()
     };
 
     run($description, $result);
-}    
+}
