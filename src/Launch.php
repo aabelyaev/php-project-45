@@ -15,16 +15,15 @@ function run(string $gameDescription, callable $round)
 
     $circle = 3;
     for ($i = 0; $i < $circle; $i++) {
-     [$answer, $correctAnswer] = $round();
-    if ($answer == $correctAnswer) {
-        line('Correct!');
-        return true;
-    } else {
-        line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-        line("Let's try again, {$name}!");
-        return false;
+        [$answer, $correctAnswer] = $round();
+        if ($answer == $correctAnswer) {
+            line('Correct!');
+        } else {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$name}!");
+            run($gameDescription, $round);
+        }
     }
-}
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
 // function run(string $gameDescription, $round) {
