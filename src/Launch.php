@@ -23,15 +23,7 @@ function run(string $gameDescription, callable $round)
             line("Let's try again, {$name}!");
             break;
         }
-    }
-    while (true) {
-        $playAgain = prompt("May I have your name? Type 'yes' to play again or any other key to exit");
-        if ($playAgain === "yes") {
-            run("Welcome to the Brain Games!", $round);
-        } else {
-            line('Goodbye!');
-            break;
-        }
+        return run("Welcome to the Brain Games!", $round);
     }
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
