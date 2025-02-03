@@ -13,7 +13,7 @@ function run(string $gameDescription, callable $round)
     line("Hello, %s!", $name);
     line($gameDescription);
 
-    $circle = [];
+    $circle = 3;
     for ($i = 0; $i < $circle; $i++) {
         [$answer, $correctAnswer] = $round();
         if ($answer == $correctAnswer) {
@@ -21,9 +21,12 @@ function run(string $gameDescription, callable $round)
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, {$name}!");
+            break;
         }
     }
-    line('Correct!');
+    while (true) {
+        run("Welcome to the Brain Games!", $round);
+    }
 }
 //Весь вывод и логика в случае правильного и неправильного ответа повторяют предыдущие шаги.Либо через цикл while 
 // function run(string $gameDescription, $round) {
