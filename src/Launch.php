@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 
 
-const ROUNDS = 3;
+const ROUNDS = [];
 
 function run(string $description, callable $game)
 {
@@ -22,7 +22,6 @@ function run(string $description, callable $game)
         if ($gameAnswer !== $playerAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
             line("Let's try again, %s!" . PHP_EOL, $playerName);
-            break;
         }
         line('Correct!');
     }
