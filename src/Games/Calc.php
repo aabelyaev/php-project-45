@@ -3,33 +3,32 @@
 namespace BrainGames\Games\Calc;
 
 use function BrainGames\Launch\run;
-use function cli\line;
-use function cli\prompt;
 
 function play()
 {
     $description = 'What is the result of the expression?';
 
-    $getAnswer = function (): array {
+    $getAnswer = function () {
         $operations = ['+', '-', '*'];
-        $rand_key = array_rand($operations, 1);
         $x = rand(1, 20);
         $y = rand(1, 20);
-        $operationId = $operations[$rand_key];
-        $expression = "$x $operationId $y";
-        $correctAnswer = 0;
-        switch ($operationId) {
+        $operationId = rand(0, count($operations) - 1);
+        switch ($operations[$operationId]) {
             case '+':
-                $correctAnswer = $x + $y;
+                $output = $x + $y;
                 break;
             case '-':
-                $correctAnswer = $x - $y;
+                $output = $x - $y;
                 break;
             case '*':
-                $correctAnswer = $x * $y;
+                $output = $x * $y;
                 break;
         }
-        return [$expression, $correctAnswer];
+        $expression = "{$x} {$operations[$operationId]} {$y}";
+        echo "Question: $expression\n";
+        $answer = (int)readline();
+
+        return [$answer, $output];
     };
 
     run($description, $getAnswer);

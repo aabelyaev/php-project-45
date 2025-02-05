@@ -11,9 +11,16 @@ function play()
     $description = 'Answer "yes" if the number is even, otherwise answer "no".';
     $getAnswer = function () {
         $number = rand(1, 100);
-        $correctAnswer = $number % 2 === 0 ? 'yes' : 'no';
-
-        return [$number, $correctAnswer];
+        $answer = prompt("Question: {$number}");
+        line("You answer: {$answer}");
+        switch ($number % 2) {
+            case 0:
+                $correctAnswer = 'yes';
+                break;
+            default:
+                $correctAnswer = 'no';
+        }
+        return [$answer, $correctAnswer];
     };
 
     run($description, $getAnswer);
