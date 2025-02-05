@@ -22,6 +22,5 @@ function run(string $gameDescription, callable $game)
         }
         line('Correct!');
     }
-    
     line("Congratulations, {$name}!");
 }
