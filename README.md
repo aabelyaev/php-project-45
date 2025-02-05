@@ -15,7 +15,8 @@ cd php-package
 make install
 ```
 
-## project 1 - brain games
+# Welcome to Brain Games
+
 Games:
 * Definition of an even number.
 * Calculator. Arithmetic expressions to be evaluated.
@@ -23,9 +24,6 @@ Games:
 * Progression. Finds missing numbers in a sequence of numbers.
 * Definition of a prime number.
 
-
-#### make brain-games:
-make brain-games
 
 #### make brain-even:
 [brain-even](https://asciinema.org/connect/14c301f8-b136-48be-8bbc-8aec77914362)
