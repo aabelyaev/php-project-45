@@ -15,8 +15,13 @@ function run(string $gameDescription, callable $game)
     $rounds = 3;
     for ($i = 0; $i < $rounds; $i++) {
         [$answer, $correctAnswer] = $game();
-        line($answer == $correctAnswer ? 'Correct!' : "'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'. Let's try again, {$name}!");
+        if ($answer != $correctAnswer) {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$name}!");
+            return;
+        }
+        line('Correct!');
     }
-
+    
     line("Congratulations, {$name}!");
 }
