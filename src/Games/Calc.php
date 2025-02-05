@@ -10,29 +10,27 @@ function play()
 {
     $description = 'What is the result of the expression?';
 
-    $result = function () {
+    $getAnswer = function (): array {
         $operations = ['+', '-', '*'];
+        $rand_key = array_rand($operations, 1);
         $x = rand(1, 20);
         $y = rand(1, 20);
-        $operationId = rand(0, count($operations) - 1);
-        switch ($operations[$operationId]) {
+        $operationId = $operations[$rand_key];
+        $expression = "$x $operationId $y";
+        $correctAnswer = 0;
+        switch ($operationId) {
             case '+':
-                $output = $x + $y;
+                $correctAnswer = $x + $y;
                 break;
             case '-':
-                $output = $x - $y;
+                $correctAnswer = $x - $y;
                 break;
             case '*':
-                $output = $x * $y;
+                $correctAnswer = $x * $y;
                 break;
         }
-        $expression = "{$x} {$operations[$operationId]} {$y}";
-        $answer = (int)prompt("Question: $expression");
-        line("You answer: {$answer}");
-        $correctAnswer = eval("return $output;");
-
-        return [$answer, $correctAnswer];
+        return [$expression, $correctAnswer];
     };
 
-    run($description, $result);
+    run($description, $getAnswer);
 }
