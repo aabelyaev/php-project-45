@@ -13,14 +13,7 @@ function play()
         $number = rand(1, 100);
         $answer = prompt("Question: {$number}");
         line("You answer: {$answer}");
-        switch ($number % 2) {
-            case 0:
-                $correctAnswer = 'yes';
-                break;
-            default:
-                $correctAnswer = 'no';
-        }
-        return [$answer, $correctAnswer];
+        return [$answer, ($number % 2 == 0 ? 'yes' : 'no')];
     };
 
     run($description, $getAnswer);
