@@ -13,22 +13,19 @@ function play()
         $x = rand(1, 20);
         $y = rand(1, 20);
         $operationId = rand(0, count($operations) - 1);
-        switch ($operations[$operationId]) {
-            case '+':
-                $output = $x + $y;
-                break;
-            case '-':
-                $output = $x - $y;
-                break;
-            case '*':
-                $output = $x * $y;
-                break;
-        }
         $expression = "{$x} {$operations[$operationId]} {$y}";
         echo "Question: $expression\n";
         $answer = (int)readline();
-
-        return [$answer, $output];
+        switch ($operations[$operationId]) {
+            case '+':
+                return [$answer, $x + $y];
+            case '-':
+                return [$answer,$x - $y];
+            case '*':
+                return [$answer,$x * $y];
+            default:
+            break;
+        }
     };
 
     run($description, $getAnswer);
