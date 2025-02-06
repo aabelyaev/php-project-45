@@ -9,7 +9,7 @@ use function cli\prompt;
 function play()
 {
     $description = 'What number is missing in the progression?';
-    $result = function () {
+    $getAnswer = function () {
         $minLength = 5;
         $maxLength = 10;
         $minStep = 1;
@@ -26,15 +26,15 @@ function play()
         $numId = rand(0, $length - 1);
         $hiddenNum = $progression[$numId];
         $progression[$numId] = '..';
-        $numbersSequence = implode(' ', $progression);
+        $number = implode(' ', $progression);
 
-        $answer = (int)prompt("Question: {$numbersSequence}");
+        $answer = (int)prompt("Question: {$number}");
         line('You answer: {$answer}');
 
         return[$answer, $hiddenNum];
     };
 
-    run($description, $result);
+    run($description, $getAnswer);
 }
 
 function getProgression(int $lenghth, int $step, int $start)
