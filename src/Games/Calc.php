@@ -15,21 +15,19 @@ function play()
         $operationId = rand(0, count($operations) - 1);
         switch ($operations[$operationId]) {
             case '+':
-                $output = $x + $y;
-                break;
+                return $x + $y;
             case '-':
-                $output = $x - $y;
-                break;
+                return  $x - $y;
             case '*':
-                $output = $x * $y;
+                return $x * $y;
             default:
-            break;
+                break;
         }
         $expression = "{$x} {$operations[$operationId]} {$y}";
         echo "Question: $expression\n";
         $answer = (int)readline();
 
-        return [$answer, $output];
+        return [$answer, $operations[$operationId]];
     };
 
     run($description, $getAnswer);
