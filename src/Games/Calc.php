@@ -16,12 +16,12 @@ function play()
         switch ($operations[$operationId]) {
             case '+':
                 $output = $x + $y;
+                break;
             case '-':
                 $output = $x - $y;
                 break;
             case '*':
                 $output = $x * $y;
-            default:
                 break;
         }
         $expression = "{$x} {$operations[$operationId]} {$y}";
