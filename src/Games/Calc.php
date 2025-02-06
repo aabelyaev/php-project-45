@@ -24,7 +24,6 @@ function play()
             case '*':
                 return [$answer,$x * $y];
             default:
-            break;
         }
     };
 
