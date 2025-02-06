@@ -24,6 +24,7 @@ function play()
             case '*':
                 return [$answer,$x * $y];
             default:
+                throw new \Exception("Unknown operator: {$operations[$operationId]}");
         }
     };
 
