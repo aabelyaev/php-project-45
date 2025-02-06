@@ -13,12 +13,7 @@ function play()
         $x = rand(1, 20);
         $y = rand(1, 20);
 
-        $expression = "Question: $x $y";
-        $answer = (int)prompt("{$expression}?");
-        line('You answer: {$answer}');
-        $correctAnswer = gcd($x, $y);
-
-        return [$answer, $correctAnswer];
+        return [prompt("Question: $x $y?"), gcd($x, $y)];
     };
 
     run($description, $getAnswer);
