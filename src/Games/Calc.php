@@ -27,7 +27,7 @@ function play()
         echo "Question: $expression\n";
         $answer = (int)readline();
 
-        return [$answer, $operations[$operationId]];
+        return [$answer, $expression];
     };
 
     run($description, $getAnswer);
