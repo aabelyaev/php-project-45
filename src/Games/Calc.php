@@ -22,8 +22,8 @@ function play()
                 break;
             case '*':
                 $output = $x * $y;
-                default:
-                break;
+            default:
+            throw new \Exception("Unknown operator: {$operations[$operationId]}");
         }
         $expression = "{$x} {$operations[$operationId]} {$y}";
         echo "Question: $expression\n";
