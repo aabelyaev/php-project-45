@@ -17,11 +17,7 @@ function play()
 
         $answer = prompt("Question: {$number}");
         line("You answer: {$answer}");
-        if (isPrime($number)) {
-            $correctAnswer = 'yes';
-        } else {
-            $correctAnswer = 'no';
-        }
+        $correctAnswer = (isPrime($number)) ? 'yes' : 'no';
 
         return [$answer, $correctAnswer];
     };

@@ -9,7 +9,7 @@ use function cli\prompt;
 function play()
 {
     $description = 'Find the greatest common divisor of given numbers.';
-    $result = function () {
+    $getAnswer = function () {
         $x = rand(1, 20);
         $y = rand(1, 20);
 
@@ -21,7 +21,7 @@ function play()
         return [$answer, $correctAnswer];
     };
 
-    run($description, $result);
+    run($description, $getAnswer);
 }
 
 function gcd(int $a, int $b)

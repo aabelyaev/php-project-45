@@ -22,6 +22,7 @@ function play()
                 break;
             case '*':
                 $output = $x * $y;
+                default:
                 break;
         }
         $expression = "{$x} {$operations[$operationId]} {$y}";

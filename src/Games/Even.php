@@ -13,7 +13,8 @@ function play()
         $number = rand(1, 100);
         $answer = prompt("Question: {$number}");
         line("You answer: {$answer}");
-        return [$answer, ($number % 2 == 0 ? 'yes' : 'no')];
+        $result = $number % 2 == 0 ? 'yes' : 'no';
+        return [$answer, $result];
     };
 
     run($description, $getAnswer);

@@ -26,9 +26,9 @@ function play()
         $numId = rand(0, $length - 1);
         $hiddenNum = $progression[$numId];
         $progression[$numId] = '..';
-        $progressionString = implode(' ', $progression);
+        $numbersSequence = implode(' ', $progression);
 
-        $answer = (int)prompt("Question: {$progressionString}");
+        $answer = (int)prompt("Question: {$numbersSequence}");
         line('You answer: {$answer}');
 
         return[$answer, $hiddenNum];
@@ -37,7 +37,7 @@ function play()
     run($description, $result);
 }
 
-function getProgression(int $lenghth, int $step, int $start = 0)
+function getProgression(int $lenghth, int $step, int $start)
 {
     $result = [$start];
 
