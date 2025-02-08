@@ -28,7 +28,7 @@ function play()
         $progression[$numId] = '..';
         $response = implode(' ', $progression);
 
-        echo "Question: $$response\n";
+        echo "Question: $response\n";
         $answer = (int)readline();
 
         return[$answer, $hiddenNum];
