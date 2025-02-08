@@ -26,10 +26,10 @@ function play()
         $numId = rand(0, $length - 1);
         $hiddenNum = $progression[$numId];
         $progression[$numId] = '..';
-        $number = implode(' ', $progression);
+        $response = implode(' ', $progression);
 
-        $answer = (int)prompt("Question: {$number}");
-        line('You answer: {$answer}');
+        echo "Question: $$response\n";
+        $answer = (int)readline();
 
         return[$answer, $hiddenNum];
     };
