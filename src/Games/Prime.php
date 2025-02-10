@@ -3,8 +3,6 @@
 namespace BrainGames\Games\Prime;
 
 use function BrainGames\Launch\run;
-use function cli\line;
-use function cli\prompt;
 
 const MIN_NUM = 1;
 const MAX_NUM = 100;
