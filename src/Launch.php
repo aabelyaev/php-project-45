@@ -14,9 +14,12 @@ function run(string $gameDescription, callable $buildRound): void
 
     $roundsCount = 3;
     for ($i = 0; $i < $roundsCount; $i++) {
-        [$answer, $correctAnswer] = $buildRound();
-        if ($answer != $correctAnswer) {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+        ['question' => $question, 'answer' => $answer] = $buildRound();
+        line('Question: %s', $question);
+        $correctAnswer = prompt('Your answer');
+
+        if ($answer !== $correctAnswer) {
+            line("'{$correctAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
             line("Let's try again, {$name}!");
             return;
         }

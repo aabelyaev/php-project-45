@@ -12,17 +12,16 @@ const MAX_NUM = 100;
 function play()
 {
     $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    $round = function () {
-        $number = rand(MIN_NUM, MAX_NUM);
-
-        $answer = prompt("Question: {$number}");
-        line("You answer: {$answer}");
-        $correctAnswer = (isPrime($number)) ? 'yes' : 'no';
-
-        return [$answer, $correctAnswer];
+    $getAnswer = function () {
+        $question = rand(MIN_NUM, MAX_NUM);
+        $answer = (isPrime($question)) ? 'yes' : 'no';
+        return [
+            'question' => $question,
+            'answer'   => $answer,
+        ];
     };
 
-    run($description, $round);
+    run($description, $getAnswer);
 }
 
 function isPrime(int $number): bool
