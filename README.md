@@ -5,7 +5,7 @@
 
 ## REQUIREMENTS
 
-* php 7.2+
+* php 8.1+
 * composer
 
 ### Setup
