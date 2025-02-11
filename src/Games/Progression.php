@@ -36,7 +36,7 @@ function play()
     run($description, $getAnswer);
 }
 
-function getProgression(int $lenghth, int $step, int $start)
+function getProgression(int $lenghth, int $step, int $start): array
 {
     $result = [$start];
 

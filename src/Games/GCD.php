@@ -22,7 +22,7 @@ function play()
     run($description, $getAnswer);
 }
 
-function gcd(int $a, int $b)
+function gcd(int $a, int $b): int
 {
     if ($b == 0) {
         return abs($a);
